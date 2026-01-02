@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>3D Portfolio World - First Person City Explorer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loading-screen">
+        <div class="loading-content">
+            <h1>🌆 MONDO 3D PORTFOLIO</h1>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loading-progress"></div>
+            </div>
+            <p class="loading-text">Caricamento città interattiva...</p>
+        </div>
+    </div>
+
+    <!-- Instructions Screen -->
+    <div id="instructions">
+        <div class="instructions-content">
+            <h1>🎮 BENVENUTO NELLA CITTÀ 3D</h1>
+            <div class="instructions-grid">
+                <div class="instruction-section">
+                    <h2>🖱️ CONTROLLI DESKTOP</h2>
+                    <p><strong>WASD</strong> o <strong>Frecce</strong> - Movimento</p>
+                    <p><strong>Mouse</strong> - Guarda intorno</p>
+                    <p><strong>Spazio</strong> - Salta</p>
+                    <p><strong>Click Sinistro</strong> - Lancia oggetti</p>
+                    <p><strong>Click Destro</strong> - Fai esplodere</p>
+                </div>
+                <div class="instruction-section">
+                    <h2>📱 CONTROLLI MOBILE</h2>
+                    <p><strong>Joystick</strong> - Movimento</p>
+                    <p><strong>Trascina schermo</strong> - Guarda intorno</p>
+                    <p><strong>Pulsante Jump</strong> - Salta</p>
+                    <p><strong>Pulsante Lancia</strong> - Lancia oggetti</p>
+                </div>
+            </div>
+            <div class="city-info">
+                <h2>🏙️ ESPLORA LA CITTÀ</h2>
+                <p>Visita: <strong>PORTFOLIO</strong>, <strong>CITTÀ OSCURA</strong>, <strong>PROGETTI</strong>, <strong>GALLERIA</strong> e altro!</p>
+                <p>Trova i barili <span style="color: #ff0000;">ROSSI</span> esplosivi e divertiti a farli esplodere!</p>
+                <p style="color: #ff6666; font-weight: bold; margin-top: 15px;">⚠️ ATTENZIONE: Mostri verdi ti inseguiranno casualmente! Uccidili con il click destro prima che ti attacchino!</p>
+            </div>
+            <button id="start-btn">🚀 INIZIA L'ESPLORAZIONE</button>
+        </div>
+    </div>
+
+    <!-- Mobile Controls -->
+    <div class="mobile-controls">
+        <!-- Virtual Joystick -->
+        <div id="joystick" class="joystick">
+            <div id="joystick-knob" class="joystick-knob"></div>
+        </div>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button id="jump-btn" class="action-btn">
+                <span>⬆️</span>
+                <small>JUMP</small>
+            </button>
+            <button id="throw-btn" class="action-btn">
+                <span>🎯</span>
+                <small>LANCIA</small>
+            </button>
+        </div>
+
+        <!-- Look Area (invisible touch area for camera) -->
+        <div id="look-area" class="look-area"></div>
+    </div>
+
+    <!-- Crosshair -->
+    <div id="crosshair">+</div>
+
+    <!-- Info HUD -->
+    <div class="info-hud">
+        <div class="hud-item health-hud">
+            <span class="hud-label">❤️ VITA</span>
+            <div class="health-bar-container">
+                <div id="health-bar" class="health-bar"></div>
+            </div>
+            <span class="hud-value"><span id="health-text">100</span>/100</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">💀 UCCISIONI</span>
+            <span class="hud-value" id="kill-counter">0</span>
+        </div>
+        <div class="hud-item">
+            <span class="hud-label">🎮 WASD + Mouse | Click = Lancia | Click Destro = Spara</span>
+        </div>
+    </div>
+
+    <canvas id="canvas3d"></canvas>
+
+    <!-- Three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
